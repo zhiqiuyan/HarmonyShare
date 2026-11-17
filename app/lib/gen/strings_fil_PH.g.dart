@@ -33,7 +33,7 @@ class TranslationsFilPh extends Translations {
   @override
   String get locale => 'Filipino';
   @override
-  String get appName => 'AloeSend';
+  String get appName => '鸿蒙分享';
   @override
   late final _TranslationsGeneralFilPh general = _TranslationsGeneralFilPh._(_root);
   @override
@@ -284,7 +284,7 @@ class _TranslationsNetworkInterfacesPageFilPh extends TranslationsNetworkInterfa
   String get title => 'Mga Interface ng Network';
   @override
   String get info =>
-      'Bilang default, ang AloeSend ay gumagamit ng lahat ng mga available na network interface. Maaari mong ibukod ang mga hindi mo gustong network dito. Kinakailangang i-restart ang server upang mai-apply ang mga pagbabago';
+      'Bilang default, ang 鸿蒙分享 ay gumagamit ng lahat ng mga available na network interface. Maaari mong ibukod ang mga hindi mo gustong network dito. Kinakailangang i-restart ang server upang mai-apply ang mga pagbabago';
   @override
   String get preview => 'Silipin';
   @override
@@ -383,7 +383,7 @@ class _TranslationsReceiveOptionsPageFilPh extends TranslationsReceiveOptionsPag
   @override
   String get destination => _root.settingsTab.receive.destination;
   @override
-  String get appDirectory => '(AloeSend folder)';
+  String get appDirectory => '(鸿蒙分享 folder)';
   @override
   String get saveToGallery => _root.settingsTab.receive.saveToGallery;
   @override
@@ -464,7 +464,7 @@ class _TranslationsWebSharePageFilPh extends TranslationsWebSharePageEn {
   @override
   String pinHint({required Object pin}) => 'Ang Pin ay "${pin}"';
   @override
-  String get encryptionHint => 'Ang AloeSend ay gumagamit ng self-signed certificate. Kailangan mo itong i-accept sa browser.';
+  String get encryptionHint => 'Ang 鸿蒙分享 ay gumagamit ng self-signed certificate. Kailangan mo itong i-accept sa browser.';
   @override
   String pendingRequests({required Object n}) => 'Mga naka-pending na request: ${n}';
 }
@@ -479,10 +479,10 @@ class _TranslationsAboutPageFilPh extends TranslationsAboutPageEn {
 
   // Translations
   @override
-  String get title => 'Tungkol sa AloeSend';
+  String get title => 'Tungkol sa 鸿蒙分享';
   @override
   List<String> get description => [
-        'Ang AloeSend ay isang libre at open-source na app na nagbibigay-daan sa secure na pagbabahagi ng mga file at mga message sa mga kalapit na device sa iyong local network nang hindi nangangailangan ng koneksyon sa internet.',
+        'Ang 鸿蒙分享 ay isang libre at open-source na app na nagbibigay-daan sa secure na pagbabahagi ng mga file at mga message sa mga kalapit na device sa iyong local network nang hindi nangangailangan ng koneksyon sa internet.',
         'Available ang app na ito sa Android, iOS, macOS, Windows, at Linux. Maaari mong mahanap ang lahat ng mga pagpipilian sa pag-download sa opisyal na homepage.',
       ];
   @override
@@ -508,7 +508,7 @@ class _TranslationsDonationPageFilPh extends TranslationsDonationPageEn {
   String get title => 'Mag-donate';
   @override
   String get info =>
-      'Ang AloeSend ay libre, open-source, at walang anumang mga ad. Kung iyong nagustuhan ang app, maaari mong suportahan ang development sa pamamagitan ng donasyon.';
+      'Ang 鸿蒙分享 ay libre, open-source, at walang anumang mga ad. Kung iyong nagustuhan ang app, maaari mong suportahan ang development sa pamamagitan ng donasyon.';
   @override
   String donate({required Object amount}) => 'Mag-donate ng ${amount}';
   @override
@@ -702,7 +702,7 @@ class _TranslationsTrayFilPh extends TranslationsTrayEn {
   @override
   String get open => _root.general.open;
   @override
-  String get close => 'Isara ang AloeSend';
+  String get close => 'Isara ang 鸿蒙分享';
   @override
   String get closeWindows => 'Isara';
 }
@@ -910,7 +910,7 @@ class _TranslationsSettingsTabGeneralFilPh extends TranslationsSettingsTabGenera
   @override
   String get launchMinimized => 'Autostart: I-start nang nakatago';
   @override
-  String get showInContextMenu => 'Ipakita ang AloeSend sa context menu';
+  String get showInContextMenu => 'Ipakita ang 鸿蒙分享 sa context menu';
   @override
   String get animations => 'Animations';
 }
@@ -1012,7 +1012,7 @@ class _TranslationsSettingsTabOtherFilPh extends TranslationsSettingsTabOtherEn 
   @override
   String get title => 'Iba Pa';
   @override
-  String get support => 'Suportahan ang AloeSend';
+  String get support => 'Suportahan ang 鸿蒙分享';
   @override
   String get donate => 'Mag-donate';
   @override
@@ -1324,7 +1324,7 @@ class _TranslationsDialogsLocalNetworkUnauthorizedFilPh extends TranslationsDial
   String get title => _root.dialogs.noPermission.title;
   @override
   String get description =>
-      'Hindi makikita ng AloeSend ang ibang devices hangga\'t hindi nabibigyan ng permission para mag-scan sa lokal na network. Mangyaring bigyan ito ng permission sa settings.';
+      'Hindi makikita ng 鸿蒙分享 ang ibang devices hangga\'t hindi nabibigyan ng permission para mag-scan sa lokal na network. Mangyaring bigyan ito ng permission sa settings.';
   @override
   String get gotoSettings => 'Settings';
 }
@@ -1484,7 +1484,7 @@ class _TranslationsDialogsSendModeHelpFilPh extends TranslationsDialogsSendModeH
   String get multiple => 'Magpadala ng mga file sa maraming recipient o tatanggap. Ang mga pagpipilian ay hindi maaalis.';
   @override
   String get link =>
-      'Ang mga recipient o tatanggap na walang nakainstall na AloeSend ay maaaring mag download nang mga napiling file sa pamamagitan ng pagbukas ng link sa kanilang browser.';
+      'Ang mga recipient o tatanggap na walang nakainstall na 鸿蒙分享 ay maaaring mag download nang mga napiling file sa pamamagitan ng pagbukas ng link sa kanilang browser.';
 }
 
 // Path: dialogs.zoom

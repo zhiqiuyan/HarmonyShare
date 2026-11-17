@@ -148,7 +148,7 @@ class _OhosDirectoryPickerDialogState
 
   String _getRelativePath() {
     if (currentPath == widget.baseDirectory) {
-      return 'Download/AloeSend';
+      return 'Download/鸿蒙分享';
     }
     return currentPath.substring(widget.baseDirectory.length + 1);
   }

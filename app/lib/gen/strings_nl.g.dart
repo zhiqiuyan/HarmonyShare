@@ -33,7 +33,7 @@ class TranslationsNl extends Translations {
   @override
   String get locale => 'Nederlands';
   @override
-  String get appName => 'AloeSend';
+  String get appName => '鸿蒙分享';
   @override
   late final _TranslationsGeneralNl general = _TranslationsGeneralNl._(_root);
   @override
@@ -361,7 +361,7 @@ class _TranslationsReceiveOptionsPageNl extends TranslationsReceiveOptionsPageEn
   @override
   String get destination => _root.settingsTab.receive.destination;
   @override
-  String get appDirectory => '(AloeSend-map)';
+  String get appDirectory => '(鸿蒙分享-map)';
   @override
   String get saveToGallery => _root.settingsTab.receive.saveToGallery;
   @override
@@ -442,7 +442,7 @@ class _TranslationsWebSharePageNl extends TranslationsWebSharePageEn {
   @override
   String pinHint({required Object pin}) => 'De PINcode is "${pin}"';
   @override
-  String get encryptionHint => 'AloeSend maakt gebruik van een zelfondertekend certificaat. Je moet dit accepteren in je browser.';
+  String get encryptionHint => '鸿蒙分享 maakt gebruik van een zelfondertekend certificaat. Je moet dit accepteren in je browser.';
   @override
   String pendingRequests({required Object n}) => 'Openstaande verzoeken: ${n}';
 }
@@ -457,10 +457,10 @@ class _TranslationsAboutPageNl extends TranslationsAboutPageEn {
 
   // Translations
   @override
-  String get title => 'Over AloeSend';
+  String get title => 'Over 鸿蒙分享';
   @override
   List<String> get description => [
-        'AloeSend is een gratis en opensource app waarmee je veilig bestanden en berichten met apparaten op je lokale netwerk kunt delen, zonder internetverbinding.',
+        '鸿蒙分享 is een gratis en opensource app waarmee je veilig bestanden en berichten met apparaten op je lokale netwerk kunt delen, zonder internetverbinding.',
         'De app is beschikbaar voor Android, iOS, macOS, Windows en Linux. Je vindt alle downloadopties op de officiële website.',
       ];
   @override
@@ -486,7 +486,7 @@ class _TranslationsDonationPageNl extends TranslationsDonationPageEn {
   String get title => 'Doneren';
   @override
   String get info =>
-      'AloeSend is gratis, opensource en advertentievrij. Als je de app graag gebruikt, kun je de ontwikkeling steunen middels een donatie.';
+      '鸿蒙分享 is gratis, opensource en advertentievrij. Als je de app graag gebruikt, kun je de ontwikkeling steunen middels een donatie.';
   @override
   String donate({required Object amount}) => '${amount} doneren';
   @override
@@ -606,7 +606,7 @@ class _TranslationsTrayNl extends TranslationsTrayEn {
   @override
   String get open => _root.general.open;
   @override
-  String get close => 'AloeSend afsluiten';
+  String get close => '鸿蒙分享 afsluiten';
   @override
   String get closeWindows => 'Sluiten';
 }
@@ -721,7 +721,7 @@ class _TranslationsNetworkInterfacesPageNl extends TranslationsNetworkInterfaces
   String get title => 'Netwerkinterfaces';
   @override
   String get info =>
-      'Standaard gebruikt AloeSend alle beschikbare netwerkinterfaces. U kunt hier ongewenste netwerken uitsluiten. U moet de server opnieuw opstarten om de wijzigingen toe te passen.';
+      'Standaard gebruikt 鸿蒙分享 alle beschikbare netwerkinterfaces. U kunt hier ongewenste netwerken uitsluiten. U moet de server opnieuw opstarten om de wijzigingen toe te passen.';
   @override
   String get whitelist => 'Whitelist';
   @override
@@ -836,7 +836,7 @@ class _TranslationsSettingsTabGeneralNl extends TranslationsSettingsTabGeneralEn
   @override
   String get launchMinimized => 'Automatisch starten: verborgen';
   @override
-  String get showInContextMenu => 'AloeSend weergeven in contextmenu';
+  String get showInContextMenu => '鸿蒙分享 weergeven in contextmenu';
   @override
   String get animations => 'Animaties';
 }
@@ -942,7 +942,7 @@ class _TranslationsSettingsTabOtherNl extends TranslationsSettingsTabOtherEn {
   @override
   String get title => 'Overig';
   @override
-  String get support => 'AloeSend steunen';
+  String get support => '鸿蒙分享 steunen';
   @override
   String get donate => 'Doneren';
   @override
@@ -1254,7 +1254,7 @@ class _TranslationsDialogsLocalNetworkUnauthorizedNl extends TranslationsDialogs
   String get title => _root.dialogs.noPermission.title;
   @override
   String get description =>
-      'AloeSend heeft rechten nodig om op het lokale netwerk naar andere apparaten te kunnen zoeken. Verleen deze rechten in de instellingen.';
+      '鸿蒙分享 heeft rechten nodig om op het lokale netwerk naar andere apparaten te kunnen zoeken. Verleen deze rechten in de instellingen.';
   @override
   String get gotoSettings => 'Instellingen';
 }
@@ -1413,7 +1413,7 @@ class _TranslationsDialogsSendModeHelpNl extends TranslationsDialogsSendModeHelp
   @override
   String get multiple => 'Bestanden naar meerdere ontvangers verzenden. De selectie blijft na de bestandsoverdracht behouden.';
   @override
-  String get link => 'Ontvangers die AloeSend niet hebben geïnstalleerd kunnen de bestanden downloaden door de link in hun browser te openen.';
+  String get link => 'Ontvangers die 鸿蒙分享 niet hebben geïnstalleerd kunnen de bestanden downloaden door de link in hun browser te openen.';
 }
 
 // Path: dialogs.zoom

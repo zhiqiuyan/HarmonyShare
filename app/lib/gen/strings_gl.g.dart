@@ -33,7 +33,7 @@ class TranslationsGl extends Translations {
   @override
   String get locale => 'Inglés';
   @override
-  String get appName => 'AloeSend';
+  String get appName => '鸿蒙分享';
   @override
   late final _TranslationsGeneralGl general = _TranslationsGeneralGl._(_root);
   @override

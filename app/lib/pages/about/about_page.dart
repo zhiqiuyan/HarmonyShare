@@ -43,7 +43,7 @@ class AboutPage extends StatelessWidget {
                 leading: const _AboutHeroLogo(),
                 chips: [
                   StatusChip(
-                    label: 'AloeSend',
+                    label: '鸿蒙分享',
                     icon: Icons.auto_awesome_rounded,
                     emphasized: true,
                     color: primaryColor,
@@ -60,7 +60,7 @@ class AboutPage extends StatelessWidget {
               ),
               SizedBox(height: gap),
               GlassSectionCard(
-                title: 'AloeSend',
+                title: '鸿蒙分享',
                 subtitle: t.aboutPage.description.join('\n\n'),
                 strong: true,
                 child: Column(
@@ -118,7 +118,7 @@ class AboutPage extends StatelessWidget {
                   children: [
                     _AboutLinkTile(
                       icon: Icons.storefront_rounded,
-                      title: '去AppGallery查看AloeSend',
+                      title: '去AppGallery查看鸿蒙分享',
                       subtitle: 'appgallery.huawei.com',
                       onTap: () => _launchExternal('https://appgallery.huawei.com/app/detail?id=com.aloereed.aloesend'),
                     ),
@@ -160,7 +160,7 @@ class AboutPage extends StatelessWidget {
                     const SizedBox(height: 10),
                     _AboutLinkTile(
                       icon: Icons.library_books_rounded,
-                      title: 'AloeSend还使用了这些开源组件许可',
+                      title: '鸿蒙分享还使用了这些开源组件许可',
                       subtitle: 'Flutter licenses',
                       onTap: () async {
                         await context.push(() => const LicensePage());

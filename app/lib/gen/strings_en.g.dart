@@ -35,7 +35,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 
   // Translations
   String get locale => 'English';
-  String get appName => 'AloeSend';
+  String get appName => '鸿蒙分享';
   late final TranslationsGeneralEn general = TranslationsGeneralEn.internal(_root);
   late final TranslationsReceiveTabEn receiveTab = TranslationsReceiveTabEn.internal(_root);
   late final TranslationsMessageTabEn messageTab = TranslationsMessageTabEn.internal(_root);
@@ -208,7 +208,7 @@ class TranslationsNetworkInterfacesPageEn {
   // Translations
   String get title => 'Network Interfaces';
   String get info =>
-      'By default, AloeSend uses all available network interfaces. You can exclude unwanted networks here. You need to restart the server to apply the changes.';
+      'By default, 鸿蒙分享 uses all available network interfaces. You can exclude unwanted networks here. You need to restart the server to apply the changes.';
   String get preview => 'Preview';
   String get whitelist => 'Whitelist';
   String get blacklist => 'Blacklist';
@@ -335,7 +335,7 @@ class TranslationsReceiveOptionsPageEn {
   // Translations
   String get title => 'Options';
   String get destination => _root.settingsTab.receive.destination;
-  String get appDirectory => '(AloeSend folder)';
+  String get appDirectory => '(鸿蒙分享 folder)';
   String get saveToGallery => _root.settingsTab.receive.saveToGallery;
   String get saveToGalleryOff => 'Turned off automatically because there are folders.';
 }
@@ -510,7 +510,7 @@ class TranslationsWebSharePageEn {
   String get autoAccept => 'Automatically accept requests';
   String get requirePin => 'Require PIN';
   String pinHint({required Object pin}) => 'The PIN is "${pin}"';
-  String get encryptionHint => 'AloeSend uses a self-signed certificate. You need to accept it in your browser.';
+  String get encryptionHint => '鸿蒙分享 uses a self-signed certificate. You need to accept it in your browser.';
   String pendingRequests({required Object n}) => 'Pending requests: ${n}';
   late final TranslationsWebSharePageProtocolEn protocol = TranslationsWebSharePageProtocolEn.internal(_root);
   String filesCount({required Object n}) => '${n} file(s)';
@@ -575,9 +575,9 @@ class TranslationsAboutPageEn {
   final Translations _root; // ignore: unused_field
 
   // Translations
-  String get title => 'About AloeSend';
+  String get title => 'About 鸿蒙分享';
   List<String> get description => [
-        'AloeSend is a free, open-source app based on Localsend that allows you to securely share files and messages with nearby devices over your local network without needing an internet connection.',
+        '鸿蒙分享 is a free, open-source app based on Localsend that allows you to securely share files and messages with nearby devices over your local network without needing an internet connection.',
 		    'This app can be used on HarmonyOS Next and interacts with Localsend on Android, iOS, macOS, Windows, and Linux.  You can find all download options on the official homepage.',
       ];
   String get author => 'Author';
@@ -594,7 +594,7 @@ class TranslationsDonationPageEn {
 
   // Translations
   String get title => 'Donate';
-  String get info => 'AloeSend is free, open-source and without any ads. If you like the app, you can support the development with a donation.';
+  String get info => '鸿蒙分享 is free, open-source and without any ads. If you like the app, you can support the development with a donation.';
   String donate({required Object amount}) => 'Donate ${amount}';
   String get thanks => 'Thank you very much!';
   String get restore => 'Restore purchase';
@@ -746,7 +746,7 @@ class TranslationsTrayEn {
 
   // Translations
   String get open => _root.general.open;
-  String get close => 'Quit AloeSend';
+  String get close => 'Quit 鸿蒙分享';
   String get closeWindows => 'Exit';
 }
 
@@ -887,7 +887,7 @@ class TranslationsSettingsTabGeneralEn {
   String get minimizeToTray => 'Minimize to the System Tray/Menu Bar when closing';
   String get launchAtStartup => 'Autostart after login';
   String get launchMinimized => 'Autostart: Start hidden';
-  String get showInContextMenu => 'Show AloeSend in context menu';
+  String get showInContextMenu => 'Show 鸿蒙分享 in context menu';
   String get animations => 'Animations';
   String get lightweightEffects => 'Lightweight effects';
   String get legacyUiMode => 'Legacy UI mode';
@@ -958,7 +958,7 @@ class TranslationsSettingsTabOtherEn {
 
   // Translations
   String get title => 'Other';
-  String get support => 'Support AloeSend';
+  String get support => 'Support 鸿蒙分享';
   String get donate => 'Donate';
   String get privacyPolicy => 'Privacy Policy';
   String get termsOfUse => 'Terms of Use';
@@ -1202,7 +1202,7 @@ class TranslationsDialogsLocalNetworkUnauthorizedEn {
   // Translations
   String get title => _root.dialogs.noPermission.title;
   String get description =>
-      'AloeSend can\'t find other devices without having the permission to scan the local network. Please grant this permission in the settings.';
+      '鸿蒙分享 can\'t find other devices without having the permission to scan the local network. Please grant this permission in the settings.';
   String get gotoSettings => 'Settings';
 }
 
@@ -1321,7 +1321,7 @@ class TranslationsDialogsSendModeHelpEn {
   String get title => 'Send modes';
   String get single => 'Sends files to one recipient. Selection will be cleared after finished files transfer.';
   String get multiple => 'Sends files to multiple recipients. Selection will not be cleared after finished files transfer.';
-  String get link => 'Recipients who do not have AloeSend installed can download the selected files by opening the link in their browser.';
+  String get link => 'Recipients who do not have 鸿蒙分享 installed can download the selected files by opening the link in their browser.';
 }
 
 // Path: dialogs.privacyPolicy

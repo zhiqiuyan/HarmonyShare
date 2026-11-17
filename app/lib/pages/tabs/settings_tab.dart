@@ -619,7 +619,7 @@ class SettingsTab extends StatelessWidget {
                   orElse: () => Container(),
                 ),
             Text(
-              '© ${DateTime.now().year} AloeSend',
+              '© ${DateTime.now().year} 鸿蒙分享',
               textAlign: TextAlign.center,
             ),
             Text(
@@ -798,7 +798,7 @@ extension on ColorMode {
   String get humanName {
     return switch (this) {
       ColorMode.system => t.settingsTab.general.colorOptions.system,
-      ColorMode.localsend => 'AloeSend',
+      ColorMode.localsend => '鸿蒙分享',
       ColorMode.oled => t.settingsTab.general.colorOptions.oled,
       ColorMode.yaru => 'Yaru',
     };

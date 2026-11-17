@@ -33,7 +33,7 @@ class TranslationsMn extends Translations {
   @override
   String get locale => 'Mongolian';
   @override
-  String get appName => 'AloeSend';
+  String get appName => '鸿蒙分享';
   @override
   late final _TranslationsGeneralMn general = _TranslationsGeneralMn._(_root);
   @override
@@ -349,7 +349,7 @@ class _TranslationsReceiveOptionsPageMn extends TranslationsReceiveOptionsPageEn
   @override
   String get destination => _root.settingsTab.receive.destination;
   @override
-  String get appDirectory => '(AloeSend-н хавтас)';
+  String get appDirectory => '(鸿蒙分享-н хавтас)';
   @override
   String get saveToGallery => _root.settingsTab.receive.saveToGallery;
   @override
@@ -422,7 +422,7 @@ class _TranslationsWebSharePageMn extends TranslationsWebSharePageEn {
   @override
   String pinHint({required Object pin}) => 'PIN код: "${pin}"';
   @override
-  String get encryptionHint => 'AloeSend нь өөрийн гарын үсэг ашигладаг тул үүнийг browser дээрээ хүлээн зөвшөөрнө үү.';
+  String get encryptionHint => '鸿蒙分享 нь өөрийн гарын үсэг ашигладаг тул үүнийг browser дээрээ хүлээн зөвшөөрнө үү.';
   @override
   String pendingRequests({required Object n}) => 'Хүлээгдэж буй хүсэлт: ${n}';
 }
@@ -437,10 +437,10 @@ class _TranslationsAboutPageMn extends TranslationsAboutPageEn {
 
   // Translations
   @override
-  String get title => 'AloeSend танилцуулга';
+  String get title => '鸿蒙分享 танилцуулга';
   @override
   List<String> get description => [
-        'AloeSend нь үнэгүй, нээлттэй эхийн програм бөгөөд танд интернет холболт шаардлагагүйгээр өөрийн дотоод сүлжээгээр ойролцоох төхөөрөмжүүдтэй файл, мессежийг аюулгүйгээр хуваалцах боломтой.',
+        '鸿蒙分享 нь үнэгүй, нээлттэй эхийн програм бөгөөд танд интернет холболт шаардлагагүйгээр өөрийн дотоод сүлжээгээр ойролцоох төхөөрөмжүүдтэй файл, мессежийг аюулгүйгээр хуваалцах боломтой.',
         'Энэ програмыг Android, iOS, macOS, Windows болон Linux дээр ашиглах боломжтой. Та албан ёсны веб сайтнаас татах боломжтой.',
       ];
   @override
@@ -464,7 +464,7 @@ class _TranslationsDonationPageMn extends TranslationsDonationPageEn {
   String get title => 'Хандив';
   @override
   String get info =>
-      'AloeSend нь үнэ төлбөргүй, нээлттэй эх сурвалжтай бөгөөд ямар ч зар сурталчилгаагүй. Хэрэв энэ програм таалагдсан бол хандивын мөнгөөр хөгжлийг дэмжих боломжтой.';
+      '鸿蒙分享 нь үнэ төлбөргүй, нээлттэй эх сурвалжтай бөгөөд ямар ч зар сурталчилгаагүй. Хэрэв энэ програм таалагдсан бол хандивын мөнгөөр хөгжлийг дэмжих боломжтой.';
   @override
   String donate({required Object amount}) => '${amount} аар хандивлах';
   @override
@@ -622,7 +622,7 @@ class _TranslationsSettingsTabGeneralMn extends TranslationsSettingsTabGeneralEn
   @override
   String get launchMinimized => 'Авто эхлүүлэх: Нуугдсан эхлэх';
   @override
-  String get showInContextMenu => 'Системийн цэсэнд AloeSend-д харуулах';
+  String get showInContextMenu => 'Системийн цэсэнд 鸿蒙分享-д харуулах';
   @override
   String get animations => 'Анимэйшн';
 }
@@ -720,7 +720,7 @@ class _TranslationsSettingsTabOtherMn extends TranslationsSettingsTabOtherEn {
   @override
   String get title => 'Бусад';
   @override
-  String get support => 'AloeSend-г дэмжих';
+  String get support => '鸿蒙分享-г дэмжих';
   @override
   String get donate => 'Хандив өгөх';
   @override

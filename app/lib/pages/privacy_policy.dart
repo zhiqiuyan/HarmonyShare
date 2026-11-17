@@ -343,7 +343,7 @@ class _PrivacyPolicyContent {
 
   static const _PrivacyPolicyContent _zh = _PrivacyPolicyContent(
     heroTitle: '隐私优先，本地优先',
-    heroSubtitle: 'AloeSend 基于 LocalSend 构建，专注于局域网传输，而不是云端收集。',
+    heroSubtitle: '鸿蒙分享 基于 LocalSend 构建，专注于局域网传输，而不是云端收集。',
     lastUpdated: '最后更新：2025 年 12 月 5 日',
     effectiveDate: '生效日期：2025 年 1 月 13 日',
     highlights: ['不上传个人数据', '不做行为分析', '主要在本地处理'],
@@ -355,32 +355,32 @@ class _PrivacyPolicyContent {
       _PrivacyPolicySection(
         title: '简介',
         paragraphs: [
-          '本隐私政策旨在帮助你了解 AloeSend 在使用过程中可能涉及的信息处理方式。',
-          'AloeSend 基于 LocalSend 构建，是一款用于局域网文件传输的开源工具。我们秉承 LocalSend 的隐私保护原则，承诺不主动收集任何用于远程分析的个人数据或非个人数据。',
+          '本隐私政策旨在帮助你了解 鸿蒙分享 在使用过程中可能涉及的信息处理方式。',
+          '鸿蒙分享 基于 LocalSend 构建，是一款用于局域网文件传输的开源工具。我们秉承 LocalSend 的隐私保护原则，承诺不主动收集任何用于远程分析的个人数据或非个人数据。',
         ],
       ),
       _PrivacyPolicySection(
         title: '个人数据的收集与使用',
         paragraphs: [
-          'AloeSend 以保护用户隐私为前提进行设计。在你使用应用时，相关信息处理遵循以下原则：',
+          '鸿蒙分享 以保护用户隐私为前提进行设计。在你使用应用时，相关信息处理遵循以下原则：',
           '为了设备辨识，应用可能会在本地保存设备标识相关信息；这些信息仅用于当前设备上的功能实现，不会主动上传给开发者或第三方。',
           '另外，由于 Flutter 框架的适配机制，系统层可能出现与剪贴板相关的调用尝试；但本应用不会将剪贴板内容上传到网络，也不会将这类内容用于远程收集。',
         ],
         bullets: [
           _PrivacyPolicyBullet(
             label: '个人数据：',
-            body: '指可识别个人身份的信息，例如姓名、邮箱地址等。AloeSend 不以云端服务的方式收集或上传这类数据。',
+            body: '指可识别个人身份的信息，例如姓名、邮箱地址等。鸿蒙分享 不以云端服务的方式收集或上传这类数据。',
           ),
           _PrivacyPolicyBullet(
             label: '非个人数据：',
-            body: '指无法直接识别个人身份的信息，例如匿名化统计结果。AloeSend 不会为了分析、广告或画像目的收集、存储或处理此类数据。',
+            body: '指无法直接识别个人身份的信息，例如匿名化统计结果。鸿蒙分享 不会为了分析、广告或画像目的收集、存储或处理此类数据。',
           ),
         ],
       ),
       _PrivacyPolicySection(
         title: '权限说明',
         paragraphs: [
-          'AloeSend 使用 Flutter 生态中的组件来完成核心功能。部分权限仅在对应功能被触发时发挥作用。',
+          '鸿蒙分享 使用 Flutter 生态中的组件来完成核心功能。部分权限仅在对应功能被触发时发挥作用。',
         ],
         bullets: [
           _PrivacyPolicyBullet(
@@ -396,15 +396,15 @@ class _PrivacyPolicyContent {
       _PrivacyPolicySection(
         title: '安全性',
         paragraphs: [
-          '由于 AloeSend 不依赖云端账户体系，也不以远程服务形式收集传输中的用户数据，因此不会引入常见的云端数据托管风险。',
+          '由于 鸿蒙分享 不依赖云端账户体系，也不以远程服务形式收集传输中的用户数据，因此不会引入常见的云端数据托管风险。',
           '即便如此，我们依然重视应用本身的安全性，并尽量通过可靠的开源实现与本地网络传输设计来保障使用体验。',
         ],
       ),
       _PrivacyPolicySection(
         title: '第三方数据收集',
         paragraphs: [
-          '虽然 AloeSend 本身不会主动收集个人或非个人数据，但操作系统、设备制造商或其他具备设备权限的应用，仍可能依据它们各自的规则进行数据处理。',
-          '这些第三方行为不在 AloeSend 的控制范围内。建议你同时查阅系统与设备厂商的隐私政策，以获得更完整的信息。',
+          '虽然 鸿蒙分享 本身不会主动收集个人或非个人数据，但操作系统、设备制造商或其他具备设备权限的应用，仍可能依据它们各自的规则进行数据处理。',
+          '这些第三方行为不在 鸿蒙分享 的控制范围内。建议你同时查阅系统与设备厂商的隐私政策，以获得更完整的信息。',
         ],
       ),
       _PrivacyPolicySection(
@@ -419,7 +419,7 @@ class _PrivacyPolicyContent {
 
   static const _PrivacyPolicyContent _en = _PrivacyPolicyContent(
     heroTitle: 'Privacy-first, local-first',
-    heroSubtitle: 'AloeSend is based on LocalSend and focuses on local-network transfer rather than cloud collection.',
+    heroSubtitle: '鸿蒙分享 is based on LocalSend and focuses on local-network transfer rather than cloud collection.',
     lastUpdated: 'Last updated: December 5, 2025',
     effectiveDate: 'Effective date: January 13, 2025',
     highlights: ['No personal uploads', 'No analytics tracking', 'Processed mainly on-device'],
@@ -431,32 +431,32 @@ class _PrivacyPolicyContent {
       _PrivacyPolicySection(
         title: 'Overview',
         paragraphs: [
-          'This privacy policy explains how AloeSend handles information when you use the app.',
-          'AloeSend is built on LocalSend and is designed for local network file transfer. We follow a privacy-focused approach and do not actively collect personal data or analytics data for remote services.',
+          'This privacy policy explains how 鸿蒙分享 handles information when you use the app.',
+          '鸿蒙分享 is built on LocalSend and is designed for local network file transfer. We follow a privacy-focused approach and do not actively collect personal data or analytics data for remote services.',
         ],
       ),
       _PrivacyPolicySection(
         title: 'Collection and use of data',
         paragraphs: [
-          'AloeSend is designed with user privacy in mind. When you use the app, information is handled according to the principles below.',
+          '鸿蒙分享 is designed with user privacy in mind. When you use the app, information is handled according to the principles below.',
           'For device recognition, the app may keep device-identification related information locally on your device. This is used only for local functionality and is not actively transmitted to the developer or third parties.',
-          'In addition, Flutter compatibility behavior may trigger clipboard-related checks at the system level. AloeSend does not upload clipboard content to the internet and does not use clipboard data for remote collection.',
+          'In addition, Flutter compatibility behavior may trigger clipboard-related checks at the system level. 鸿蒙分享 does not upload clipboard content to the internet and does not use clipboard data for remote collection.',
         ],
         bullets: [
           _PrivacyPolicyBullet(
             label: 'Personal data:',
-            body: 'information that can identify you directly, such as your name or email address. AloeSend does not collect or upload this kind of information as part of a cloud service.',
+            body: 'information that can identify you directly, such as your name or email address. 鸿蒙分享 does not collect or upload this kind of information as part of a cloud service.',
           ),
           _PrivacyPolicyBullet(
             label: 'Non-personal data:',
-            body: 'information that does not directly identify you, such as anonymized statistics. AloeSend does not collect, store, or process this kind of data for analytics, advertising, or profiling.',
+            body: 'information that does not directly identify you, such as anonymized statistics. 鸿蒙分享 does not collect, store, or process this kind of data for analytics, advertising, or profiling.',
           ),
         ],
       ),
       _PrivacyPolicySection(
         title: 'Permissions',
         paragraphs: [
-          'AloeSend uses Flutter ecosystem components to provide its core features. Some permissions are only relevant when a related feature is used.',
+          '鸿蒙分享 uses Flutter ecosystem components to provide its core features. Some permissions are only relevant when a related feature is used.',
         ],
         bullets: [
           _PrivacyPolicyBullet(
@@ -472,15 +472,15 @@ class _PrivacyPolicyContent {
       _PrivacyPolicySection(
         title: 'Security',
         paragraphs: [
-          'Because AloeSend does not rely on cloud accounts and does not operate as a remote data collection service, it avoids many common risks associated with hosted user data.',
+          'Because 鸿蒙分享 does not rely on cloud accounts and does not operate as a remote data collection service, it avoids many common risks associated with hosted user data.',
           'That said, we still take app security seriously and aim to provide a trustworthy experience through open-source implementations and local-network transfer design.',
         ],
       ),
       _PrivacyPolicySection(
         title: 'Third-party collection',
         paragraphs: [
-          'While AloeSend itself does not actively collect personal or non-personal data, your operating system, device manufacturer, or other apps with device permissions may handle data under their own policies.',
-          'Those third-party behaviors are outside AloeSend’s control. We recommend reviewing your system and device vendor privacy policies for a fuller picture.',
+          'While 鸿蒙分享 itself does not actively collect personal or non-personal data, your operating system, device manufacturer, or other apps with device permissions may handle data under their own policies.',
+          'Those third-party behaviors are outside 鸿蒙分享’s control. We recommend reviewing your system and device vendor privacy policies for a fuller picture.',
         ],
       ),
       _PrivacyPolicySection(
