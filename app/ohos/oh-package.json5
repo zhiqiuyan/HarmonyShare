@@ -14,7 +14,7 @@
   },
   "overrides": {
     "@ohos/flutter_ohos": "file:./har/flutter.har",
-    "file_selector_ohos": "../../../../FlutterCache/git/flutter_packages-c199e1745f242a0ca2d789dadee63b9953a4d27f/packages/file_selector/file_selector_ohos/ohos",
+    "file_selector_ohos": "../../../../../.pub-cache/git/flutter_packages-c199e1745f242a0ca2d789dadee63b9953a4d27f/packages/file_selector/file_selector_ohos/ohos",
     "image_picker_ohos": "file:./har/image_picker_ohos.har",
     "path_provider_ohos": "file:./har/path_provider_ohos.har",
     "shared_preferences_ohos": "file:./har/shared_preferences_ohos.har",
@@ -24,13 +24,12 @@
     "package_info_plus": "file:./har/package_info_plus.har",
     "@ohos/flutter_module": "file:./entry",
     "open_filex": "file:./har/open_filex.har",
-    "permission_handler_ohos": "file:./har/permission_handler_ohos.har",
+    "permission_handler_ohos": "../../../../../.pub-cache/git/flutter_permission_handler-8c86086b90dbb82c6cc8b249f02435f4368a3272/permission_handler_ohos/ohos",
     "share_plus": "file:./har/share_plus.har",
-    "fluttertoast": "file:./har/fluttertoast.har",
-    "webview_flutter_ohos": "file:./har/webview_flutter_ohos.har",
+    "fluttertoast": "../../../../../.pub-cache/git/flutter_fluttertoast-b904d5000b30d31d0d67fbd96ac53e3320d2e222/ohos",
+    "webview_flutter_ohos": "../webview_flutter_ohos/ohos",
     "file_picker_ohos": "file:./har/file_picker_ohos.har",
-    "photo_manager": "../../../../FlutterCache/hosted/pub.flutter-io.cn/photo_manager-3.6.3/ohos",
-    "in_app_purchase_ohos": "file:./har/in_app_purchase_ohos.har",
-    "rhttp": "file:./har/rhttp.har"
+    "in_app_purchase_ohos": "../../../../../.pub-cache/git/flutter_packages-c199e1745f242a0ca2d789dadee63b9953a4d27f/packages/in_app_purchase/in_app_purchase_ohos/ohos",
+    "rhttp": "../rhttp/rhttp/ohos"
   }
 }

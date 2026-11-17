@@ -1169,10 +1169,9 @@ packages:
   photo_manager:
     dependency: "direct overridden"
     description:
-      name: photo_manager
-      sha256: "74e5cb8a9e359e7fd461f684564c5a3e82b2d360f0e46d64264b4b381628c86d"
-      url: "https://pub.flutter-io.cn"
-    source: hosted
+      path: "third_party/photo_manager"
+      relative: true
+    source: path
     version: "2.8.2"
   platform:
     dependency: transitive

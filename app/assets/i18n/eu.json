@@ -1,6 +1,6 @@
 {
   "locale": "Euskara",
-  "appName": "AloeSend",
+  "appName": "鸿蒙分享",
   "general": {
     "accept": "Onartu",
     "accepted": "Onartuta",
@@ -209,11 +209,11 @@
     "requests": "Eskerak",
     "noRequests": "Oraindik ez dago eskaerarik.",
     "encryption": "@:settingsTab.network.encryption",
-    "encryptionHint": "AloeSend-ek autosinatutako zertifikatuak erabiltzen ditu. Nabigatzailean onartu behar duzu",
+    "encryptionHint": "鸿蒙分享-ek autosinatutako zertifikatuak erabiltzen ditu. Nabigatzailean onartu behar duzu",
     "pendingRequests": "Eskerak: {n}"
   },
   "aboutPage": {
-    "title": "AloeSend buruz"
+    "title": "鸿蒙分享 buruz"
   },
   "changelogPage": {
     "title": "Aldaketak"
@@ -278,7 +278,7 @@
     },
     "localNetworkUnauthorized": {
       "title": "@:dialogs.noPermission.title",
-      "description": "Sare lokala eskaneatzeko baimenik gabe, AloeSend-ek ezin ditu inguruko gailuak aurkitu. Mesedez, onartu baimen hau ezarpenetan.",
+      "description": "Sare lokala eskaneatzeko baimenik gabe, 鸿蒙分享-ek ezin ditu inguruko gailuak aurkitu. Mesedez, onartu baimen hau ezarpenetan.",
       "gotoSettings": "Ezarpenak"
     },
     "messageInput": {
@@ -316,13 +316,13 @@
       "title": "Bidalketa moduak",
       "single": "Bidali fitxategiak hartzaile bakar bati. Bidalketa bukatutakoan aukeraketa garbituko da.",
       "multiple": "Bidali fitxategiak hartzaile anitzeri. Aukeraketa ez da garbituko.",
-      "link": "AloeSend instalatuta ez duten hartzaileak fitxategiak eskuratu ahali zango dituzte lotura nabigatzailean zabalduz."
+      "link": "鸿蒙分享 instalatuta ez duten hartzaileak fitxategiak eskuratu ahali zango dituzte lotura nabigatzailean zabalduz."
     }
   },
   "tray": {
     "@info": "Apple Guidelines are very strict about the 'close' wording.",
     "open": "@:general.open",
-    "close": "Itxi AloeSend"
+    "close": "Itxi 鸿蒙分享"
   },
   "web": {
     "waiting": "@:sendPage.waiting",
