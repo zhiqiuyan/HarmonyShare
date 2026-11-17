@@ -20,6 +20,126 @@
           ]
         }
       ]
+    },
+    {
+      "name": "path_provider_ohos",
+      "srcPath": "../../../../../.pub-cache/git/flutter_packages-c199e1745f242a0ca2d789dadee63b9953a4d27f/packages/path_provider/path_provider_ohos/ohos",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "url_launcher_ohos",
+      "srcPath": "../../../../../.pub-cache/git/flutter_packages-c9e1ff58c1926a9fd81a500e7d1da60f1b7263e3/packages/url_launcher/url_launcher_ohos/ohos",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "shared_preferences_ohos",
+      "srcPath": "../../../../../.pub-cache/git/flutter_packages-c199e1745f242a0ca2d789dadee63b9953a4d27f/packages/shared_preferences/shared_preferences_ohos/ohos",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "share_plus",
+      "srcPath": "../../../../../.pub-cache/git/flutter_plus_plugins-a783b7f492983fb2ceab2e146d564d04ad758ff2/packages/share_plus/share_plus/ohos",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "package_info_plus",
+      "srcPath": "../../../../../.pub-cache/git/flutter_plus_plugins-a783b7f492983fb2ceab2e146d564d04ad758ff2/packages/package_info_plus/package_info_plus/ohos",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "open_filex",
+      "srcPath": "../../../../../.pub-cache/git/fluttertpc_open_filex-288ceebaa20fda71a28360a846b62f3cd8452049/ohos",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "image_picker_ohos",
+      "srcPath": "../image_picker/image_picker_ohos/ohos",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "file_picker_ohos",
+      "srcPath": "../fluttertpc_file_picker/ohos/ohos",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "device_info_plus",
+      "srcPath": "../device_info_plus/device_info_plus/ohos",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "connectivity_plus",
+      "srcPath": "../../../../../.pub-cache/git/flutter_plus_plugins-a783b7f492983fb2ceab2e146d564d04ad758ff2/packages/connectivity_plus/connectivity_plus/ohos",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
     }
   ]
 }
