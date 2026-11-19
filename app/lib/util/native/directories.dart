@@ -21,7 +21,7 @@ Future<String> getDefaultDestinationDirectory() async {
       return (await path.getApplicationDocumentsDirectory()).path;
     case TargetPlatform.ohos:
       final dir = await path.getDownloadsDirectory();
-      final externDir = "/storage/Users/currentUser/Download/cn.yanzhiqiu.Harmonyshare";
+      final externDir = "/storage/Users/currentUser/Download/cn.yanzhiqiu.harmonyshare";
       // 尝试externDir是否有写入权限
       try {
         final file = File('$externDir/test.txt');

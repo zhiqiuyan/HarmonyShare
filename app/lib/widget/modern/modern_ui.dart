@@ -17,10 +17,9 @@ class AppBackdrop extends StatelessWidget {
     // 此处保留 backgroundGradient 结构以兼容深浅色过渡动画。
     return SizedBox.expand(
       child: DecoratedBox(
-        decoration: BoxDecoration(
-          color: visuals.backgroundTop,
-          gradient: visuals.backgroundGradient,
-        ),
+        // color 与 gradient 互斥，不能同时设置：release 下同时给出会在首帧
+        // 触发 BoxDecoration 断言，表现为整页白屏。此处只用纯色背景。
+        decoration: BoxDecoration(color: visuals.backgroundTop),
         child: child,
       ),
     );

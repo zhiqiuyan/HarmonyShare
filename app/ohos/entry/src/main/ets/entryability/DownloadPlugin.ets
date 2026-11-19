@@ -141,7 +141,7 @@ class DownloadApi {
        // 添加需要被拉起应用的bundleName和abilityName
        wants: [
          {
-           bundleName: "cn.yanzhiqiu.Harmonyshare",
+           bundleName: "cn.yanzhiqiu.harmonyshare",
            abilityName: "EntryAbility"
          }
        ],

@@ -28,7 +28,7 @@ Future<String?> pickDirectoryPath(BuildContext context) async {
 
 Future<String?> _showOhosDirectoryPicker(BuildContext context) async {
   const baseDirectory =
-      '/storage/Users/currentUser/Download/cn.yanzhiqiu.Harmonyshare';
+      '/storage/Users/currentUser/Download/cn.yanzhiqiu.harmonyshare';
   if (!await Directory(baseDirectory).exists()) {
     await Directory(baseDirectory).create(recursive: true);
   }
