@@ -39,7 +39,7 @@ class AboutPage extends StatelessWidget {
             children: [
               ModernPageHeader(
                 title: t.aboutPage.title,
-                subtitle: '© ${DateTime.now().year} Aloereed',
+                subtitle: '© ${DateTime.now().year} 鸿蒙分享 开源项目',
                 leading: const _AboutHeroLogo(),
                 chips: [
                   StatusChip(
@@ -61,7 +61,9 @@ class AboutPage extends StatelessWidget {
               SizedBox(height: gap),
               GlassSectionCard(
                 title: '鸿蒙分享',
-                subtitle: t.aboutPage.description.join('\n\n'),
+                subtitle: LocaleSettings.currentLocale.languageCode == 'zh'
+                    ? '局域网内安全、快速地互传文件与信息，无需互联网连接。基于 LocalSend 开源项目适配 HarmonyOS。'
+                    : 'Share files and messages securely over your local network — no internet required. Adapted for HarmonyOS from the open-source LocalSend project.',
                 strong: true,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -69,84 +71,75 @@ class AboutPage extends StatelessWidget {
                     const Center(child: AloeChatAILogo(withText: true)),
                     const SizedBox(height: 18),
                     FilledButton.tonalIcon(
-                      onPressed: () => _launchExternal('https://ohos.aloereed.com'),
-                      icon: const Icon(Icons.open_in_new_rounded),
-                      label: const Text('ohos.aloereed.com'),
+                      onPressed: () => _launchExternal('https://github.com/zhiqiuyan/localsend-ohos'),
+                      icon: const Icon(Icons.code_rounded),
+                      label: const Text('查看开源仓库'),
                     ),
                   ],
                 ),
               ),
               SizedBox(height: gap),
               GlassSectionCard(
-                title: t.aboutPage.author,
+                title: '关于本项目',
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     _AboutInfoBlock(
-                      label: t.aboutPage.author,
+                      label: '维护者',
                       child: Text.rich(
                         _buildContributor(
-                          label: 'Aloereed',
+                          label: '@zhiqiuyan',
                           primaryColor: primaryColor,
                         ),
                       ),
                     ),
                     const SizedBox(height: 18),
                     _AboutInfoBlock(
-                      label: '鸿蒙移植',
-                      child: Text.rich(
-                        _buildContributor(
-                          label: '@Aloereed',
-                          primaryColor: primaryColor,
-                        ),
+                      label: '项目性质',
+                      child: Text(
+                        '个人开源项目，非商业发行，遵循 Apache License 2.0 开源协议。',
+                        style: Theme.of(context).textTheme.bodyMedium,
                       ),
                     ),
                     const SizedBox(height: 18),
                     FilledButton.tonalIcon(
-                      onPressed: () => _launchExternal('https://github.com/Aloereed/localsend-ohos'),
+                      onPressed: () => _launchExternal('https://github.com/zhiqiuyan/localsend-ohos'),
                       icon: const Icon(Icons.code_rounded),
-                      label: const Text('localsend-ohos'),
+                      label: const Text('github.com/zhiqiuyan/localsend-ohos'),
                     ),
                   ],
                 ),
               ),
               SizedBox(height: gap),
               GlassSectionCard(
-                title: 'Links',
-                subtitle: 'Homepage, downloads, upstream source and licenses.',
+                title: '链接与许可',
+                subtitle: '源码、问题反馈与开源许可。',
                 child: Column(
                   children: [
                     _AboutLinkTile(
-                      icon: Icons.storefront_rounded,
-                      title: '去AppGallery查看鸿蒙分享',
-                      subtitle: 'appgallery.huawei.com',
-                      onTap: () => _launchExternal('https://appgallery.huawei.com/app/detail?id=com.aloereed.aloesend'),
+                      icon: Icons.code_rounded,
+                      title: '鸿蒙分享 开源仓库',
+                      subtitle: 'github.com/zhiqiuyan/localsend-ohos',
+                      onTap: () => _launchExternal('https://github.com/zhiqiuyan/localsend-ohos'),
                     ),
                     const SizedBox(height: 10),
                     _AboutLinkTile(
-                      icon: Icons.home_rounded,
-                      title: '主页',
-                      subtitle: 'www.aloereed.com',
-                      onTap: () => _launchExternal('https://www.aloereed.com'),
-                    ),
-                    const SizedBox(height: 10),
-                    _AboutLinkTile(
-                      icon: Icons.apps_rounded,
-                      title: 'Aloereed鸿蒙应用',
-                      subtitle: 'ohos.aloereed.com',
-                      onTap: () => _launchExternal('https://ohos.aloereed.com'),
+                      icon: Icons.bug_report_rounded,
+                      title: '问题反馈 / 联系我们',
+                      subtitle: '通过 GitHub Issues',
+                      onTap: () => _launchExternal('https://github.com/zhiqiuyan/localsend-ohos/issues'),
                     ),
                     const SizedBox(height: 10),
                     _AboutLinkTile(
                       icon: Icons.source_rounded,
-                      title: '基于LocalSend开发',
+                      title: '上游项目 LocalSend',
                       subtitle: 'github.com/localsend/localsend',
                       onTap: () => _launchExternal('https://github.com/localsend/localsend'),
                     ),
                     const SizedBox(height: 10),
                     _AboutLinkTile(
                       icon: Icons.gavel_rounded,
-                      title: 'LocalSend原始许可证',
+                      title: 'LocalSend 原始许可证',
                       subtitle: 'github.com/localsend/localsend/blob/main/LICENSE',
                       onTap: () => _launchExternal('https://github.com/localsend/localsend/blob/main/LICENSE'),
                     ),
@@ -160,7 +153,7 @@ class AboutPage extends StatelessWidget {
                     const SizedBox(height: 10),
                     _AboutLinkTile(
                       icon: Icons.library_books_rounded,
-                      title: '鸿蒙分享还使用了这些开源组件许可',
+                      title: '开源组件许可',
                       subtitle: 'Flutter licenses',
                       onTap: () async {
                         await context.push(() => const LicensePage());

@@ -407,7 +407,8 @@ class PersistenceService {
   }
 
   bool getLegacyUiMode() {
-    return _prefs.getBool(_legacyUiModeKey) ?? false;
+    // 产品决策（2026-11）：鸿蒙分享固定使用旧版简洁界面，不提供界面模式切换。
+    return true;
   }
 
   Future<void> setLegacyUiMode(bool enabled) async {

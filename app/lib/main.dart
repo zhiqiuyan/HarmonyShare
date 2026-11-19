@@ -75,6 +75,17 @@ class PrivacyPolicyApp extends StatelessWidget {
         lightweightEffects: lightweightEffects,
       ),
       themeMode: colorMode == ColorMode.oled ? ThemeMode.dark : themeMode,
+      // 产品决策（2026-11）：全局字体调小。在系统字阶基础上缩小 12%，
+      // 保留用户系统无障碍字号设置（dynamic type），不做硬编码固定值。
+      builder: (context, child) {
+        final systemScale = MediaQuery.of(context).textScaler.scale(16) / 16;
+        return MediaQuery(
+          data: MediaQuery.of(context).copyWith(
+            textScaler: TextScaler.linear(systemScale * 0.88),
+          ),
+          child: child ?? const SizedBox.shrink(),
+        );
+      },
       home: const PrivacyPolicyScreen(),
     );
   }

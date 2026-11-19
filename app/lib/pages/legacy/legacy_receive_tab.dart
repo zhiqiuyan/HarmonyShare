@@ -3,6 +3,8 @@ import 'package:localsend_app/gen/strings.g.dart';
 import 'package:localsend_app/pages/receive_history_page.dart';
 import 'package:localsend_app/pages/tabs/receive_tab_vm.dart';
 import 'package:localsend_app/util/ip_helper.dart';
+import 'package:localsend_app/widget/local_send_logo.dart';
+import 'package:localsend_app/widget/rotating_widget.dart';
 import 'package:refena_flutter/refena_flutter.dart';
 import 'package:routerino/routerino.dart';
 
@@ -24,16 +26,47 @@ class LegacyReceiveTab extends StatelessWidget {
         ? vm.localIps.map((ip) => '#${ip.visualId}').toSet().join(' | ')
         : t.general.offline;
 
+    // 图标中心落在内容区高度的黄金分割点（38.2%），并限制最大下移量以避免把下方内容挤出屏幕。
+    final contentHeight = MediaQuery.of(context).size.height -
+        MediaQuery.of(context).padding.top -
+        kBottomNavigationBarHeight;
+    final logoTopSpacer =
+        (contentHeight * 0.382 - 16 - 84).clamp(0.0, 320.0).toDouble();
+
     return ListView(
       padding: const EdgeInsets.all(16),
       children: [
+        SizedBox(height: logoTopSpacer),
+        // 首页 Logo：放大、居中，无卡片背景。在线时缓慢旋转（15s/圈）。
+        Center(
+          child: SizedBox(
+            width: 168,
+            height: 168,
+            child: isOnline && vm.animationsEnabled
+                ? RotatingWidget(
+                    duration: const Duration(seconds: 15),
+                    spinning: true,
+                    child: const FittedBox(
+                      fit: BoxFit.contain,
+                      child: AloeChatAILogo(withText: false),
+                    ),
+                  )
+                : const FittedBox(
+                    fit: BoxFit.contain,
+                    child: AloeChatAILogo(withText: false),
+                  ),
+          ),
+        ),
+        const SizedBox(height: 16),
         Text(
           vm.serverState?.alias ?? vm.aliasSettings,
+          textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.headlineSmall,
         ),
         const SizedBox(height: 6),
         Text(
           isOnline ? networkSummary : t.general.offline,
+          textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.bodyMedium,
         ),
         const SizedBox(height: 16),
@@ -41,57 +74,60 @@ class LegacyReceiveTab extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(14),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
                   t.general.quickSave,
+                  textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
                 const SizedBox(height: 12),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: SegmentedButton<_QuickSaveMode>(
-                    multiSelectionEnabled: false,
-                    emptySelectionAllowed: false,
-                    showSelectedIcon: false,
-                    onSelectionChanged: (selection) async {
-                      if (selection.contains(_QuickSaveMode.off)) {
-                        await vm.onSetQuickSave(context, false);
-                        if (context.mounted) {
+                Center(
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: SegmentedButton<_QuickSaveMode>(
+                      multiSelectionEnabled: false,
+                      emptySelectionAllowed: false,
+                      showSelectedIcon: false,
+                      onSelectionChanged: (selection) async {
+                        if (selection.contains(_QuickSaveMode.off)) {
+                          await vm.onSetQuickSave(context, false);
+                          if (context.mounted) {
+                            await vm.onSetQuickSaveFromFavorites(context, false);
+                          }
+                        } else if (selection.contains(_QuickSaveMode.favorites)) {
+                          await vm.onSetQuickSave(context, false);
+                          if (context.mounted) {
+                            await vm.onSetQuickSaveFromFavorites(context, true);
+                          }
+                        } else if (selection.contains(_QuickSaveMode.on)) {
                           await vm.onSetQuickSaveFromFavorites(context, false);
+                          if (context.mounted) {
+                            await vm.onSetQuickSave(context, true);
+                          }
                         }
-                      } else if (selection.contains(_QuickSaveMode.favorites)) {
-                        await vm.onSetQuickSave(context, false);
-                        if (context.mounted) {
-                          await vm.onSetQuickSaveFromFavorites(context, true);
-                        }
-                      } else if (selection.contains(_QuickSaveMode.on)) {
-                        await vm.onSetQuickSaveFromFavorites(context, false);
-                        if (context.mounted) {
-                          await vm.onSetQuickSave(context, true);
-                        }
-                      }
-                    },
-                    selected: {
-                      if (!vm.quickSaveSettings && !vm.quickSaveFromFavoritesSettings)
-                        _QuickSaveMode.off,
-                      if (vm.quickSaveFromFavoritesSettings) _QuickSaveMode.favorites,
-                      if (vm.quickSaveSettings) _QuickSaveMode.on,
-                    },
-                    segments: [
-                      ButtonSegment(
-                        value: _QuickSaveMode.off,
-                        label: Text(t.receiveTab.quickSave.off),
-                      ),
-                      ButtonSegment(
-                        value: _QuickSaveMode.favorites,
-                        label: Text(t.receiveTab.quickSave.favorites),
-                      ),
-                      ButtonSegment(
-                        value: _QuickSaveMode.on,
-                        label: Text(t.receiveTab.quickSave.on),
-                      ),
-                    ],
+                      },
+                      selected: {
+                        if (!vm.quickSaveSettings && !vm.quickSaveFromFavoritesSettings)
+                          _QuickSaveMode.off,
+                        if (vm.quickSaveFromFavoritesSettings) _QuickSaveMode.favorites,
+                        if (vm.quickSaveSettings) _QuickSaveMode.on,
+                      },
+                      segments: [
+                        ButtonSegment(
+                          value: _QuickSaveMode.off,
+                          label: Text(t.receiveTab.quickSave.off),
+                        ),
+                        ButtonSegment(
+                          value: _QuickSaveMode.favorites,
+                          label: Text(t.receiveTab.quickSave.favorites),
+                        ),
+                        ButtonSegment(
+                          value: _QuickSaveMode.on,
+                          label: Text(t.receiveTab.quickSave.on),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],

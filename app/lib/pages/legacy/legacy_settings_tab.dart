@@ -65,20 +65,7 @@ class LegacySettingsTab extends StatelessWidget {
                     onChanged: (theme) => vm.onChangeTheme(context, theme),
                   ),
                 ),
-                _EntryRow(
-                  label: t.settingsTab.general.color,
-                  child: CustomDropdownButton<ColorMode>(
-                    value: vm.settings.colorMode,
-                    items: vm.colorModes.map((colorMode) {
-                      return DropdownMenuItem(
-                        value: colorMode,
-                        alignment: Alignment.center,
-                        child: Text(colorMode.humanName),
-                      );
-                    }).toList(),
-                    onChanged: vm.onChangeColorMode,
-                  ),
-                ),
+                // 产品决策（2026-11）：鸿蒙分享锁定单一品牌蓝，移除颜色选择项。
                 if (checkPlatformIsDesktop()) ...[
                   if (vm.advanced && checkPlatformIsNotWaylandDesktop())
                     _SwitchRow(
@@ -143,15 +130,7 @@ class LegacySettingsTab extends StatelessWidget {
                         .setLightweightEffects(b);
                   },
                 ),
-                _SwitchRow(
-                  label: t.settingsTab.general.legacyUiMode,
-                  value: vm.settings.legacyUiMode,
-                  onChanged: (b) async {
-                    await ref
-                        .notifier(settingsProvider)
-                        .setLegacyUiMode(b);
-                  },
-                ),
+                // 产品决策（2026-11）：固定旧界面，移除界面模式切换开关。
               ],
             ),
             _SectionCard(

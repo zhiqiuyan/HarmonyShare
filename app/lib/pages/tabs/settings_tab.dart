@@ -100,20 +100,7 @@ class SettingsTab extends StatelessWidget {
                     onChanged: (theme) => vm.onChangeTheme(context, theme),
                   ),
                 ),
-                _SettingsEntry(
-                  label: t.settingsTab.general.color,
-                  child: CustomDropdownButton<ColorMode>(
-                    value: vm.settings.colorMode,
-                    items: vm.colorModes.map((colorMode) {
-                      return DropdownMenuItem(
-                        value: colorMode,
-                        alignment: Alignment.center,
-                        child: Text(colorMode.humanName),
-                      );
-                    }).toList(),
-                    onChanged: vm.onChangeColorMode,
-                  ),
-                ),
+                // 产品决策（2026-11）：鸿蒙分享锁定单一品牌蓝，移除颜色选择项。
                 // _ButtonEntry(
                 //   label: t.settingsTab.general.language,
                 //   buttonLabel: vm.settings.locale?.humanName ?? t.settingsTab.general.languageOptions.system,
@@ -183,13 +170,7 @@ class SettingsTab extends StatelessWidget {
                     await ref.notifier(settingsProvider).setLightweightEffects(b);
                   },
                 ),
-                _BooleanEntry(
-                  label: t.settingsTab.general.legacyUiMode,
-                  value: vm.settings.legacyUiMode,
-                  onChanged: (b) async {
-                    await ref.notifier(settingsProvider).setLegacyUiMode(b);
-                  },
-                ),
+                // 产品决策（2026-11）：固定旧界面，移除界面模式切换开关。
               ],
             ),
             _SettingsSection(

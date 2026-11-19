@@ -262,7 +262,7 @@ class _PolicyContactCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(14),
                   ),
                   child: Icon(
-                    Icons.alternate_email_rounded,
+                    Icons.link_rounded,
                     color: Theme.of(context).colorScheme.primary,
                   ),
                 ),
@@ -343,75 +343,78 @@ class _PrivacyPolicyContent {
 
   static const _PrivacyPolicyContent _zh = _PrivacyPolicyContent(
     heroTitle: '隐私优先，本地优先',
-    heroSubtitle: '鸿蒙分享 基于 LocalSend 构建，专注于局域网传输，而不是云端收集。',
-    lastUpdated: '最后更新：2025 年 12 月 5 日',
-    effectiveDate: '生效日期：2025 年 1 月 13 日',
-    highlights: ['不上传个人数据', '不做行为分析', '主要在本地处理'],
+    heroSubtitle: '鸿蒙分享 只在你的局域网内传输文件，不依赖云端账户，也不上传你的数据。',
+    lastUpdated: '最后更新：2026 年 11 月 19 日',
+    effectiveDate: '生效日期：2026 年 11 月 19 日',
+    highlights: ['无需互联网', '不上传文件', '不做行为分析'],
     contactTitle: '联系我们',
-    contactSubtitle: '如果你对隐私政策有疑问，可以通过下面的邮箱联系我们。',
-    contactEmail: 'aloechat@aloereed.com',
-    company: '郴州液态科技有限公司 · 2024–2025',
+    contactSubtitle: '如对隐私政策有疑问，可通过项目仓库的 GitHub Issues 反馈。',
+    contactEmail: 'github.com/zhiqiuyan/localsend-ohos/issues',
+    company: '鸿蒙分享 · 个人开源项目',
     sections: [
       _PrivacyPolicySection(
         title: '简介',
         paragraphs: [
-          '本隐私政策旨在帮助你了解 鸿蒙分享 在使用过程中可能涉及的信息处理方式。',
-          '鸿蒙分享 基于 LocalSend 构建，是一款用于局域网文件传输的开源工具。我们秉承 LocalSend 的隐私保护原则，承诺不主动收集任何用于远程分析的个人数据或非个人数据。',
+          '本隐私政策说明 鸿蒙分享 在使用过程中的数据处理方式。',
+          '鸿蒙分享 是一款基于 LocalSend 开源项目的 HarmonyOS 应用，用于局域网内设备间安全传输文件与信息。我们遵循 LocalSend 的隐私设计理念：不主动收集任何用于远程分析的个人数据或非个人数据。',
         ],
       ),
       _PrivacyPolicySection(
-        title: '个人数据的收集与使用',
+        title: '数据处理原则',
         paragraphs: [
-          '鸿蒙分享 以保护用户隐私为前提进行设计。在你使用应用时，相关信息处理遵循以下原则：',
-          '为了设备辨识，应用可能会在本地保存设备标识相关信息；这些信息仅用于当前设备上的功能实现，不会主动上传给开发者或第三方。',
-          '另外，由于 Flutter 框架的适配机制，系统层可能出现与剪贴板相关的调用尝试；但本应用不会将剪贴板内容上传到网络，也不会将这类内容用于远程收集。',
+          '鸿蒙分享 的所有传输都发生在你的本地网络中，文件不会经过任何由我们运营的服务器——本应用没有这样的服务器。',
+          '为完成设备发现与连接，应用会在本地使用网络地址与设备名称等信息；这些信息仅用于当前的局域网会话，不会被上传或长期留存。',
         ],
         bullets: [
           _PrivacyPolicyBullet(
             label: '个人数据：',
-            body: '指可识别个人身份的信息，例如姓名、邮箱地址等。鸿蒙分享 不以云端服务的方式收集或上传这类数据。',
+            body: '指可识别个人身份的信息，例如姓名、邮箱地址。鸿蒙分享 不要求注册账户，也不收集这类信息。',
           ),
           _PrivacyPolicyBullet(
             label: '非个人数据：',
-            body: '指无法直接识别个人身份的信息，例如匿名化统计结果。鸿蒙分享 不会为了分析、广告或画像目的收集、存储或处理此类数据。',
+            body: '指无法直接识别个人身份的信息，例如匿名化统计结果。鸿蒙分享 不因分析、广告或画像目的收集、存储或处理此类数据。',
           ),
         ],
       ),
       _PrivacyPolicySection(
         title: '权限说明',
         paragraphs: [
-          '鸿蒙分享 使用 Flutter 生态中的组件来完成核心功能。部分权限仅在对应功能被触发时发挥作用。',
+          '部分系统权限仅在对应功能被使用时才会触发，应用不会在后台静默调用。',
         ],
         bullets: [
           _PrivacyPolicyBullet(
-            label: '相机 / 录音：',
-            body: '主要用于媒体选择相关插件能力。应用不会自行进行录制，也不会向开发者或第三方传输你的录音录像内容。',
+            label: '网络与本地连接：',
+            body: '用于发现同一局域网内的设备并建立传输连接，是本应用的核心功能。',
           ),
           _PrivacyPolicyBullet(
             label: '存储：',
-            body: '用于保存你从其他设备接收到的文件，以及访问你主动选择分享的本地文件。',
+            body: '用于保存从其他设备接收的文件，以及读取你主动选择分享的本地文件。',
+          ),
+          _PrivacyPolicyBullet(
+            label: '相机 / 麦克风：',
+            body: '仅来自媒体选择相关组件的适配能力。应用不会自行录制，也不会上传你的录音录像内容。',
           ),
         ],
       ),
       _PrivacyPolicySection(
         title: '安全性',
         paragraphs: [
-          '由于 鸿蒙分享 不依赖云端账户体系，也不以远程服务形式收集传输中的用户数据，因此不会引入常见的云端数据托管风险。',
-          '即便如此，我们依然重视应用本身的安全性，并尽量通过可靠的开源实现与本地网络传输设计来保障使用体验。',
+          '由于 鸿蒙分享 不依赖云端账户，也不以远程服务形式收集数据，因此不存在云端数据托管或泄露的风险。',
+          '文件传输在局域网内完成。请确保只在可信的网络环境中使用，并留意接收请求，以免接收不需要的文件。',
         ],
       ),
       _PrivacyPolicySection(
-        title: '第三方数据收集',
+        title: '第三方',
         paragraphs: [
-          '虽然 鸿蒙分享 本身不会主动收集个人或非个人数据，但操作系统、设备制造商或其他具备设备权限的应用，仍可能依据它们各自的规则进行数据处理。',
-          '这些第三方行为不在 鸿蒙分享 的控制范围内。建议你同时查阅系统与设备厂商的隐私政策，以获得更完整的信息。',
+          '鸿蒙分享 本身不含广告、统计或第三方数据收集 SDK。',
+          '操作系统、设备厂商或具备设备权限的其他应用，仍可能按各自规则处理数据；这些行为不在本应用的控制范围内，建议同时查阅系统与设备厂商的隐私政策。',
         ],
       ),
       _PrivacyPolicySection(
-        title: '隐私政策的变更',
+        title: '政策更新',
         paragraphs: [
-          '我们可能会不时更新本隐私政策。更新后的版本会在应用内展示，并自发布时起生效。',
-          '建议你定期查看本页面，以便及时了解最新条款。',
+          '我们可能会不时更新本隐私政策。更新后的版本会在应用内展示，并自发布时生效。',
+          '建议定期查看本页面，以便及时了解最新条款。',
         ],
       ),
     ],
@@ -419,33 +422,32 @@ class _PrivacyPolicyContent {
 
   static const _PrivacyPolicyContent _en = _PrivacyPolicyContent(
     heroTitle: 'Privacy-first, local-first',
-    heroSubtitle: '鸿蒙分享 is based on LocalSend and focuses on local-network transfer rather than cloud collection.',
-    lastUpdated: 'Last updated: December 5, 2025',
-    effectiveDate: 'Effective date: January 13, 2025',
-    highlights: ['No personal uploads', 'No analytics tracking', 'Processed mainly on-device'],
+    heroSubtitle: '鸿蒙分享 transfers files only within your local network — no cloud account, no data uploads.',
+    lastUpdated: 'Last updated: November 19, 2026',
+    effectiveDate: 'Effective date: November 19, 2026',
+    highlights: ['No internet required', 'No file uploads', 'No analytics tracking'],
     contactTitle: 'Contact',
-    contactSubtitle: 'If you have questions about this privacy policy, you can reach us at the email below.',
-    contactEmail: 'aloechat@aloereed.com',
-    company: 'Chenzhou Liquid Technology Co., Ltd. · 2024–2025',
+    contactSubtitle: 'If you have questions about this privacy policy, please open an issue in the project repository.',
+    contactEmail: 'github.com/zhiqiuyan/localsend-ohos/issues',
+    company: '鸿蒙分享 · an open-source personal project',
     sections: [
       _PrivacyPolicySection(
         title: 'Overview',
         paragraphs: [
           'This privacy policy explains how 鸿蒙分享 handles information when you use the app.',
-          '鸿蒙分享 is built on LocalSend and is designed for local network file transfer. We follow a privacy-focused approach and do not actively collect personal data or analytics data for remote services.',
+          '鸿蒙分享 is a HarmonyOS app built on the open-source LocalSend project, designed for secure file transfer between devices on a local network. We follow LocalSend’s privacy philosophy: we do not actively collect personal or non-personal data for remote analytics.',
         ],
       ),
       _PrivacyPolicySection(
-        title: 'Collection and use of data',
+        title: 'Data handling principles',
         paragraphs: [
-          '鸿蒙分享 is designed with user privacy in mind. When you use the app, information is handled according to the principles below.',
-          'For device recognition, the app may keep device-identification related information locally on your device. This is used only for local functionality and is not actively transmitted to the developer or third parties.',
-          'In addition, Flutter compatibility behavior may trigger clipboard-related checks at the system level. 鸿蒙分享 does not upload clipboard content to the internet and does not use clipboard data for remote collection.',
+          'All transfers happen on your local network. Files never pass through any server operated by us — this app has none.',
+          'For device discovery and connection, the app uses local network addresses and device names. This information is used only for the current local session and is neither uploaded nor retained long-term.',
         ],
         bullets: [
           _PrivacyPolicyBullet(
             label: 'Personal data:',
-            body: 'information that can identify you directly, such as your name or email address. 鸿蒙分享 does not collect or upload this kind of information as part of a cloud service.',
+            body: 'information that can identify you directly, such as your name or email address. 鸿蒙分享 requires no account and does not collect this kind of information.',
           ),
           _PrivacyPolicyBullet(
             label: 'Non-personal data:',
@@ -456,31 +458,35 @@ class _PrivacyPolicyContent {
       _PrivacyPolicySection(
         title: 'Permissions',
         paragraphs: [
-          '鸿蒙分享 uses Flutter ecosystem components to provide its core features. Some permissions are only relevant when a related feature is used.',
+          'Some system permissions are triggered only when the related feature is used; the app does not silently access them in the background.',
         ],
         bullets: [
           _PrivacyPolicyBullet(
-            label: 'Camera / microphone:',
-            body: 'used mainly for media-picker related capabilities. The app does not record on its own and does not transmit your recordings to the developer or third parties.',
+            label: 'Network & local connection:',
+            body: 'used to discover devices on the same local network and establish transfer connections — the core function of this app.',
           ),
           _PrivacyPolicyBullet(
             label: 'Storage:',
             body: 'used to save files received from other devices and to access files you explicitly choose to share.',
+          ),
+          _PrivacyPolicyBullet(
+            label: 'Camera / microphone:',
+            body: 'only from media-picker component compatibility. The app does not record on its own and does not upload your recordings.',
           ),
         ],
       ),
       _PrivacyPolicySection(
         title: 'Security',
         paragraphs: [
-          'Because 鸿蒙分享 does not rely on cloud accounts and does not operate as a remote data collection service, it avoids many common risks associated with hosted user data.',
-          'That said, we still take app security seriously and aim to provide a trustworthy experience through open-source implementations and local-network transfer design.',
+          'Because 鸿蒙分享 does not rely on cloud accounts or remote data collection, it avoids the common risks associated with hosted user data.',
+          'Transfers occur within your local network. Please use the app only on trusted networks and review incoming requests to avoid receiving unwanted files.',
         ],
       ),
       _PrivacyPolicySection(
-        title: 'Third-party collection',
+        title: 'Third parties',
         paragraphs: [
-          'While 鸿蒙分享 itself does not actively collect personal or non-personal data, your operating system, device manufacturer, or other apps with device permissions may handle data under their own policies.',
-          'Those third-party behaviors are outside 鸿蒙分享’s control. We recommend reviewing your system and device vendor privacy policies for a fuller picture.',
+          '鸿蒙分享 contains no ads, analytics, or third-party data-collection SDKs.',
+          'Your operating system, device manufacturer, or other apps with device permissions may still handle data under their own policies. Those behaviors are outside this app’s control; please review your system and device vendor privacy policies.',
         ],
       ),
       _PrivacyPolicySection(
