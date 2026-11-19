@@ -4,6 +4,7 @@ import 'package:localsend_app/model/persistence/color_mode.dart';
 import 'package:localsend_app/provider/device_info_provider.dart';
 import 'package:localsend_app/util/native/platform_check.dart';
 import 'package:localsend_app/util/ui/dynamic_colors.dart';
+import 'package:localsend_app/util/ui/harmony_tokens.dart';
 import 'package:localsend_app/util/ui/visuals.dart';
 import 'package:refena_flutter/refena_flutter.dart';
 import 'package:yaru/yaru.dart' as yaru;
@@ -30,6 +31,12 @@ ThemeData getThemeWithSettings({
   required DynamicColors? dynamicColors,
   bool lightweightEffects = false,
 }) {
+  // 产品决策（2026-11）：鸿蒙分享锁定「单一品牌色 + 轻量化特效」一种风格。
+  // 覆盖入参，忽略 system 动态取色 / oled / yaru 多套配色与重特效开关，
+  // 保证全应用颜色始终为官方高亮蓝、特效始终为轻量档。
+  colorMode = ColorMode.localsend;
+  lightweightEffects = true;
+
   if (colorMode == ColorMode.yaru) {
     return _getYaruTheme(
       brightness,
@@ -245,8 +252,10 @@ ColorScheme _determineColorScheme(
   Brightness brightness,
   DynamicColors? dynamicColors,
 ) {
+  // 官方「系统高亮色」#0A59F7（HarmonyOS 设计指南·色彩）。
+  // 与分层应用图标品牌蓝一致；原上游为绿色 #34C759。
   final defaultColorScheme = ColorScheme.fromSeed(
-    seedColor: const Color(0xFF34C759),
+    seedColor: HarmonyTokens.accent(brightness),
     brightness: brightness,
   );
 
@@ -254,13 +263,9 @@ ColorScheme _determineColorScheme(
     ColorMode.system =>
       brightness == Brightness.light ? dynamicColors?.light : dynamicColors?.dark,
     ColorMode.localsend => defaultColorScheme.copyWith(
-        primary: const Color(0xFF34C759),
-        secondary: brightness == Brightness.light
-            ? const Color(0xFF3A7AFE)
-            : const Color(0xFF7BA7FF),
-        tertiary: brightness == Brightness.light
-            ? const Color(0xFF8A5BFF)
-            : const Color(0xFFB8A0FF),
+        primary: HarmonyTokens.accent(brightness),
+        secondary: HarmonyTokens.accent(brightness),
+        tertiary: HarmonyTokens.accent(brightness),
       ),
     ColorMode.oled => (dynamicColors?.dark ?? defaultColorScheme).copyWith(
         background: Colors.black,
@@ -279,38 +284,27 @@ AppVisuals _buildVisuals({
   required bool reduceEffects,
 }) {
   final isDark = brightness == Brightness.dark;
-  final glassSurfaceOpacity = isDark
-      ? (reduceEffects ? 0.14 : 0.08)
-      : (reduceEffects ? 0.66 : 0.55);
-  final glassSurfaceStrongOpacity = isDark
-      ? (reduceEffects ? 0.2 : 0.12)
-      : (reduceEffects ? 0.78 : 0.72);
+  // 对齐 HarmonyOS 自带应用：雪域灰纯色页面背景 + 实色卡片，
+  // 不使用渐变、彩色光晕与毛玻璃。出处见 harmony_tokens.dart。
+  final pageBackground = HarmonyTokens.background(brightness);
+  final cardSurface = HarmonyTokens.surface(brightness);
+  final foreground = HarmonyTokens.foreground(brightness);
   return AppVisuals(
-    useGlass: useGlass,
+    // 关闭毛玻璃：鸿蒙卡片为系统实色容器，模糊层无视觉收益且增加合成开销。
+    useGlass: false,
     reduceEffects: reduceEffects,
-    backgroundTop:
-        isDark ? const Color(0xFF08111E) : const Color(0xFFF4F8FF),
-    backgroundMiddle:
-        isDark ? const Color(0xFF0C1A2B) : const Color(0xFFEFF5F3),
-    backgroundBottom:
-        isDark ? const Color(0xFF05080F) : const Color(0xFFF8FAFD),
-    accentGlow: colorScheme.primary.withOpacity(
-      isDark
-          ? (reduceEffects ? 0.12 : 0.16)
-          : (reduceEffects ? 0.08 : 0.11),
-    ),
-    glassSurface:
-        (isDark ? Colors.white : Colors.white).withOpacity(glassSurfaceOpacity),
-    glassSurfaceStrong:
-        (isDark ? Colors.white : Colors.white)
-            .withOpacity(glassSurfaceStrongOpacity),
-    glassBorder:
-        (isDark ? Colors.white : colorScheme.outline).withOpacity(isDark ? 0.12 : 0.18),
-    mutedForeground:
-        (isDark ? Colors.white : colorScheme.onSurface).withOpacity(0.7),
-    shadowColor: Colors.black.withOpacity(isDark ? 0.24 : 0.08),
-    glassBlur: useGlass && !reduceEffects ? 18 : 0,
-    dialogBlur: useGlass && !reduceEffects ? 24 : 0,
+    backgroundTop: pageBackground,
+    backgroundMiddle: pageBackground,
+    backgroundBottom: pageBackground,
+    accentGlow: Colors.transparent,
+    glassSurface: cardSurface,
+    glassSurfaceStrong: cardSurface,
+    glassBorder: foreground.withOpacity(isDark ? 0.10 : 0.08),
+    mutedForeground: foreground.withOpacity(HarmonyTokens.secondaryAlpha),
+    shadowColor: Colors.black.withOpacity(isDark ? 0.24 : 0.05),
+    glassBlur: 0,
+    dialogBlur: 0,
+    // 圆角沿用工程既有值；未在官网核到 sys.float 当期数值前不擅自改动。
     radiusSmall: 14,
     radiusMedium: 20,
     radiusLarge: 28,

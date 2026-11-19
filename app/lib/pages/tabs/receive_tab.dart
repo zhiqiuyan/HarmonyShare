@@ -6,7 +6,9 @@ import 'package:localsend_app/util/ip_helper.dart';
 import 'package:localsend_app/util/ui/visuals.dart';
 import 'package:localsend_app/widget/local_send_logo.dart';
 import 'package:localsend_app/widget/modern/modern_ui.dart';
+import 'package:localsend_app/widget/receive_progress_card.dart';
 import 'package:localsend_app/widget/responsive_list_view.dart';
+import 'package:localsend_app/widget/rotating_widget.dart';
 import 'package:refena_flutter/refena_flutter.dart';
 import 'package:routerino/routerino.dart';
 
@@ -22,6 +24,8 @@ class ReceiveTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final vm = context.watch(receiveTabVmProvider);
+    // 局部持有，避免 AnimatedCrossFade 退场重建时 session 已置空触发空断言。
+    final session = vm.session;
     final visuals = context.visuals;
     final sectionSpacing = context.adaptiveSectionSpacing;
     final isOnline = vm.serverState != null;
@@ -43,7 +47,11 @@ class ReceiveTab extends StatelessWidget {
           subtitle: isOnline
               ? networkSummary
               : '${t.receiveTab.title} | ${t.general.offline}',
-          leading: _HeroLogo(isOnline: isOnline),
+          // 与 Windows 版 LocalSend 同款：在线且动画开启时 Logo 缓慢旋转（15s/圈）。
+          leading: _HeroLogo(
+            isOnline: isOnline,
+            spinning: isOnline && vm.animationsEnabled,
+          ),
           trailing: _HeaderActions(vm: vm),
           chips: [
             StatusChip(
@@ -70,6 +78,20 @@ class ReceiveTab extends StatelessWidget {
           ],
         ),
         SizedBox(height: sectionSpacing),
+        // 接收过程首页可见：有会话时插入卡片，结束自动收起。
+        AnimatedCrossFade(
+          duration: const Duration(milliseconds: 220),
+          crossFadeState:
+              session != null ? CrossFadeState.showSecond : CrossFadeState.showFirst,
+          firstChild: const SizedBox.shrink(),
+          secondChild: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              if (session != null) ReceiveProgressCard(session: session),
+              SizedBox(height: sectionSpacing),
+            ],
+          ),
+        ),
         GlassSectionCard(
           title: t.general.quickSave,
           subtitle: networkSummary,
@@ -211,21 +233,33 @@ class _HeaderActions extends StatelessWidget {
 
 class _HeroLogo extends StatelessWidget {
   final bool isOnline;
+  final bool spinning;
 
-  const _HeroLogo({required this.isOnline});
+  const _HeroLogo({
+    required this.isOnline,
+    required this.spinning,
+  });
 
   @override
   Widget build(BuildContext context) {
     final size = context.isPhoneLayout ? 84.0 : 104.0;
+    const logo = FittedBox(
+      fit: BoxFit.contain,
+      child: AloeChatAILogo(withText: false),
+    );
     return GlassSurface(
       width: size,
       height: size,
       strong: isOnline,
       padding: EdgeInsets.all(context.isPhoneLayout ? 8 : 10),
-      child: const FittedBox(
-        fit: BoxFit.contain,
-        child: AloeChatAILogo(withText: false),
-      ),
+      // 动画关闭时完全不挂载 RotatingWidget，避免其 30fps 循环空转。
+      child: spinning
+          ? RotatingWidget(
+              duration: const Duration(seconds: 15),
+              spinning: isOnline,
+              child: logo,
+            )
+          : logo,
     );
   }
 }

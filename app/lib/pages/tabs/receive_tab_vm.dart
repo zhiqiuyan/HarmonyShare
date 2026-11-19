@@ -1,6 +1,8 @@
 import 'package:common/util/sleep.dart';
 import 'package:flutter/material.dart';
+import 'package:localsend_app/model/state/server/receive_session_state.dart';
 import 'package:localsend_app/model/state/server/server_state.dart';
+import 'package:localsend_app/provider/animation_provider.dart';
 import 'package:localsend_app/provider/local_ip_provider.dart';
 import 'package:localsend_app/provider/network/server/server_provider.dart';
 import 'package:localsend_app/provider/settings_provider.dart';
@@ -20,6 +22,10 @@ class ReceiveTabVm {
   final bool quickSaveSettings;
   final bool quickSaveFromFavoritesSettings;
   final ServerState? serverState;
+  /// 当前接收会话（含 quick save 自动接收），用于首页接收过程卡片。
+  final ReceiveSessionState? session;
+  /// 系统动画开关（含后台休眠降级），用于首页 Logo 旋转。
+  final bool animationsEnabled;
   final List<String> localIps;
   final bool showAdvanced;
   final bool showHistoryButton;
@@ -32,6 +38,8 @@ class ReceiveTabVm {
     required this.quickSaveSettings,
     required this.quickSaveFromFavoritesSettings,
     required this.serverState,
+    required this.session,
+    required this.animationsEnabled,
     required this.localIps,
     required this.showAdvanced,
     required this.showHistoryButton,
@@ -45,6 +53,8 @@ final receiveTabVmProvider = ViewProvider((ref) {
   final (alias, quickSave, quickSaveFromFavorites) = ref.watch(settingsProvider.select((s) => (s.alias, s.quickSave, s.quickSaveFromFavorites)));
   final networkInfo = ref.watch(localIpProvider).localIps;
   final serverState = ref.watch(serverProvider);
+  final session = serverState?.session;
+  final animationsEnabled = ref.watch(animationProvider);
   final showAdvanced = ref.watch(_showAdvancedProvider);
   final showHistoryButton = ref.watch(_showHistoryButtonProvider);
 
@@ -53,6 +63,8 @@ final receiveTabVmProvider = ViewProvider((ref) {
     quickSaveSettings: quickSave,
     quickSaveFromFavoritesSettings: quickSaveFromFavorites,
     serverState: serverState,
+    session: session,
+    animationsEnabled: animationsEnabled,
     localIps: networkInfo,
     showAdvanced: showAdvanced,
     showHistoryButton: showHistoryButton,

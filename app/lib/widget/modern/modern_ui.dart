@@ -12,42 +12,16 @@ class AppBackdrop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final visuals = context.visuals;
+    // 对齐 HarmonyOS 自带应用：纯中性灰页面背景，不使用彩色渐变光晕。
+    // backgroundTop/Middle/Bottom 已在 theme.dart 统一为同一系统背景色，
+    // 此处保留 backgroundGradient 结构以兼容深浅色过渡动画。
     return SizedBox.expand(
       child: DecoratedBox(
-        decoration: BoxDecoration(gradient: visuals.backgroundGradient),
-        child: Stack(
-          fit: StackFit.expand,
-          children: [
-            Positioned(
-              top: -120,
-              left: -90,
-              child: _GlowOrb(
-                size: 260,
-                color: visuals.accentGlow,
-                reduceEffects: visuals.reduceEffects,
-              ),
-            ),
-            Positioned(
-              top: 120,
-              right: -110,
-              child: _GlowOrb(
-                size: 220,
-                color: Theme.of(context).colorScheme.primary.withOpacity(0.12),
-                reduceEffects: visuals.reduceEffects,
-              ),
-            ),
-            Positioned(
-              bottom: -120,
-              left: 40,
-              child: _GlowOrb(
-                size: 280,
-                color: Theme.of(context).colorScheme.tertiary.withOpacity(0.08),
-                reduceEffects: visuals.reduceEffects,
-              ),
-            ),
-            child,
-          ],
+        decoration: BoxDecoration(
+          color: visuals.backgroundTop,
+          gradient: visuals.backgroundGradient,
         ),
+        child: child,
       ),
     );
   }
